@@ -1,49 +1,56 @@
-import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
   backgroundText: string;
   children: React.ReactNode;
-  className?: string;
 }
 
 export function SectionHeading({
   backgroundText,
   children,
-  className,
 }: SectionHeadingProps) {
   return (
-    <div
-      className={cn(
-        "grid w-full place-items-center",
-        className,
-      )}
-    >
-      <div
-        aria-hidden="true"
-        className={cn(
-          "col-start-1 row-start-1",
-          "select-none whitespace-nowrap",
-          "font-sans font-semibold uppercase leading-none",
-          "text-[48px] tracking-widest",
-          "text-section-heading",
-          "lg:text-[150px] lg:tracking-[0.15em]",
-        )}
-      >
-        {backgroundText}
-      </div>
+    <div className="relative w-full overflow-hidden">
+      <div className="relative flex min-h-18 items-center justify-center md:min-h-45">
+        <h2
+          id="experience-heading"
+          aria-hidden="true"
+          className="
+            max-w-full
+            font-sans
+            text-[clamp(38px,10vw,135px)]
+            font-semibold
+            uppercase
+            leading-none
+            tracking-widest
+            text-secondary
+            md:tracking-[0.15em]
+          "
+        >
+          {backgroundText}
+        </h2>
 
-      <h2
-        className={cn(
-          "col-start-1 row-start-1",
-          "z-10 self-end translate-y-2 lg:translate-y-7.5",
-          "font-sans font-semibold uppercase",
-          "text-[20px] leading-none tracking-[0.03em]",
-          "text-foreground",
-          "lg:text-[52px]",
-        )}
-      >
-        {children}
-      </h2>
+        <span
+          className="
+            absolute
+            max-w-full
+            whitespace-nowrap
+            px-4
+            font-sans
+            text-[20px]
+            font-semibold
+            uppercase
+            tracking-[0.03em]
+            text-foreground
+            translate-y-4
+            md:text-[clamp(32px,3.61vw,52px)]
+            md:translate-y-6
+            lg:translate-y-9
+            xl:translate-y-13
+          "
+        >
+          {children}
+        </span>
+      </div>
     </div>
   );
 }

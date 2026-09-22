@@ -2,6 +2,7 @@
 
 import { experiences } from "@/lib/data/experience";
 import { Container } from "@/components/layout/container";
+import { SectionHeading } from "@/components/layout/section-heading";
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 
@@ -28,49 +29,9 @@ export function Experience() {
       <Container>
         <div className="py-12 md:py-16">
           {/* Section heading */}
-          <div className="relative w-full overflow-hidden">
-            <div className="relative flex min-h-[72px] items-center justify-center md:min-h-[180px]">
-              <h2
-                id="experience-heading"
-                aria-hidden="true"
-                className="
-                  max-w-full
-                  font-sans
-                  text-[clamp(38px,10vw,135px)]
-                  font-semibold
-                  uppercase
-                  leading-none
-                  tracking-widest
-                  text-secondary
-                  md:tracking-[0.15em]
-                "
-              >
-                Experience
-              </h2>
-
-              <span
-                className="
-                  absolute
-                  max-w-full
-                  whitespace-nowrap
-                  px-4
-                  font-sans
-                  text-[20px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.03em]
-                  text-foreground
-                  translate-y-4
-                  md:text-[clamp(32px,3.61vw,52px)]
-                  md:translate-y-6
-                  lg:translate-y-9
-                  xl:translate-y-13
-                "
-              >
-                /Experience
-              </span>
-            </div>
-          </div>
+          <SectionHeading backgroundText="Experience">
+            /Experience
+          </SectionHeading>
 
           {/* Experience content */}
           <div className="mt-8 lg:mt-12">

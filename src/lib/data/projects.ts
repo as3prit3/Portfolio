@@ -79,6 +79,6 @@ export const projects: Project[] = [
       "CSS",
       "REST API",
     ],
-    image: "/projects/movies.png",
+    image: "/projects/movie.png",
   }
 ];

@@ -15,7 +15,7 @@ export function Hero() {
           {/* Name */}
           <h1
             id="hero-title"
-            className="font-sans text-[48px] font-semibold uppercase leading-[1.2] tracking-[0.06em] sm:text-[52px] md:text-center lg:text-[72px]"
+            className="font-sans text-[48px] font-semibold uppercase leading-[1.2] tracking-[0.06em] sm:text-[52px] md:text-center lg:text-[76px]"
           >
             <span className="mr-2 block text-transparent [-webkit-text-stroke:1px_#FFFFFF] md:inline">
               Houssam
@@ -54,7 +54,7 @@ export function Hero() {
               </p>
 
               <Link
-                href="/cv.pdf"
+                href="/Resume.pdf"
                 download
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-3 py-2 text-sm font-medium text-secondary transition-transform hover:scale-[1.02] md:px-5 md:py-2.5"
               >

@@ -25,7 +25,7 @@ export function Projects() {
                   font-semibold
                   uppercase
                   leading-none
-                  tracking-[0.10em]
+                  tracking-widest
                   text-secondary
                   md:tracking-[0.15em]
                 "

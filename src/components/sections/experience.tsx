@@ -27,7 +27,7 @@ export function Experience() {
       className="w-full"
     >
       <Container>
-        <div className="py-12 md:py-16">
+        <div className="pt- pb-12 md:py-16">
           {/* Section heading */}
           <SectionHeading backgroundText="Experience">
             /Experience

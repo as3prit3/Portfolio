@@ -1,6 +1,7 @@
 import { Mail, Send } from "lucide-react";
 import { FaLinkedinIn, FaGithub  } from "react-icons/fa";
 import { Container } from "@/components/layout/container";
+import { ContactForm } from "@/components/sections/contact-form";
 
 export function Contact() {
   return (
@@ -13,173 +14,42 @@ export function Contact() {
 		<div className="mx-auto w-full max-w-360">
 			{/* Contact */}
 			<div className="flex flex-col items-center px-0 py-12 ">
-			<div className="text-center">
-				<h2
-				id="contact-heading"
-				className="
-					font-display
-					text-[clamp(38px,8vw,110px)]
-					font-normal
-					italic
-					uppercase
-					leading-none
-					tracking-[-0.02em]
-					text-white
-				"
-				>
-				Get in touch
-				</h2>
-
-				<p
-				className="
-					mx-auto
-					mt-4
-					max-w-90
-					text-[10px]
-					leading-[1.4]
-					text-[#A09FA3]
-					sm:max-w-105
-					sm:text-xs
-				"
-				>
-				Have a question or want to work together? Drop me a message and
-				I&apos;ll get back to you as soon as possible.
-				</p>
-			</div>
-
-			{/* Form */}
-			<form className="mt-8 w-full max-w-140">
-				<div>
-				<label
-					htmlFor="name"
-					className="block text-xs font-medium text-white"
-				>
-					Full Name
-				</label>
-
-				<div className="relative mt-1.5">
-					<input
-					id="name"
-					name="name"
-					type="text"
-					autoComplete="name"
-					placeholder="Full Name"
+				<div className="text-center">
+					<h2
+					id="contact-heading"
 					className="
-						h-10
-						w-full
-						rounded-lg
-						border
-						border-white/10
-						bg-[#18181A]
-						px-4
-						text-xs
+						font-display
+						text-[clamp(38px,8vw,110px)]
+						font-normal
+						italic
+						uppercase
+						leading-none
+						tracking-[-0.02em]
 						text-white
-						outline-none
-						placeholder:text-[#77777C]
-						transition-colors
-						focus:border-white/30
 					"
-					/>
-				</div>
-				</div>
+					>
+					Get in touch
+					</h2>
 
-				<div className="mt-4">
-				<label
-					htmlFor="email"
-					className="block text-xs font-medium text-white"
-				>
-					Email
-				</label>
-
-				<input
-					id="email"
-					name="email"
-					type="email"
-					autoComplete="email"
-					placeholder="Email"
+					<p
 					className="
-					mt-1.5
-					h-10
-					w-full
-					rounded-lg
-					border
-					border-white/10
-					bg-[#18181A]
-					px-4
-					text-xs
-					text-white
-					outline-none
-					placeholder:text-[#77777C]
-					transition-colors
-					focus:border-white/30
+						mx-auto
+						mt-4
+						max-w-90
+						text-[10px]
+						leading-[1.4]
+						text-[#A09FA3]
+						sm:max-w-105
+						sm:text-xs
 					"
-				/>
+					>
+					Have a question or want to work together? Drop me a message and
+					I&apos;ll get back to you as soon as possible.
+					</p>
 				</div>
 
-				<div className="mt-4">
-				<label
-					htmlFor="message"
-					className="block text-xs font-medium text-white"
-				>
-					Message
-				</label>
-
-				<textarea
-					id="message"
-					name="message"
-					rows={5}
-					placeholder="Your message..."
-					className="
-					mt-1.5
-					min-h-26
-					w-full
-					resize-none
-					rounded-lg
-					border
-					border-white/10
-					bg-[#18181A]
-					px-4
-					py-3
-					text-xs
-					leading-relaxed
-					text-white
-					outline-none
-					placeholder:text-[#77777C]
-					transition-colors
-					focus:border-white/30
-					"
-				/>
-				</div>
-
-				<button
-				type="submit"
-				className="
-					mt-2
-					flex
-					h-10
-					w-full
-					items-center
-					justify-center
-					gap-1.5
-					rounded-lg
-					border
-					border-white
-					bg-transparent
-					text-[12px]
-					font-medium
-					text-white
-					transition-colors
-					hover:bg-white
-					hover:text-black
-					focus-visible:outline-2
-					focus-visible:outline-offset-2
-					focus-visible:outline-white
-				"
-				>
-				<Send size={14} strokeWidth={1.5} />
-				Send Message
-				</button>
-			</form>
+				{/* Form */}
+				<ContactForm />
 			</div>
 
 			{/* Footer */}
@@ -260,7 +130,7 @@ export function Contact() {
 					</a>
 
 					<a
-						href="#"
+						href="mailto:houssamhadhadi@gmail.com"
 						aria-label="Email"
 						className="
 						flex

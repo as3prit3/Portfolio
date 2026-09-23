@@ -18,7 +18,7 @@ export function Projects() {
           </SectionHeading>
 
           {/* Projects */}
-          <div className="mt-4 lg:mt-20">
+          <div className="mt-4 lg:mt-12">
             {projects.map((project) => (
               <ProjectItem key={project.id} project={project} />
             ))}

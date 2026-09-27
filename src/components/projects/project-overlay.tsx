@@ -140,6 +140,7 @@ export function ProjectOverlay({
 
             {/* Scrollable project content */}
             <div
+              data-lenis-prevent
               className="
                 hide-scrollbar
                 flex

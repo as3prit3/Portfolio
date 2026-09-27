@@ -11,16 +11,16 @@ export function Projects() {
       className="w-full"
     >
       <Container>
-        <div className="py-12 md:py-6">
+        <div className="py-12 md:py-12">
           {/* Section heading */}
-          <SectionHeading backgroundText="Portfolio">
+          <SectionHeading backgroundText="Portfolio" heading="projects">
             /Selected work
           </SectionHeading>
 
           {/* Projects */}
           <div className="mt-4 lg:mt-12">
-            {projects.map((project) => (
-              <ProjectItem key={project.id} project={project} />
+            {projects.map((project, index) => (
+              <ProjectItem key={project.id} project={project} animationDelay={index * 0.18 + 0.3}/>
             ))}
           </div>
         </div>

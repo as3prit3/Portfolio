@@ -1,18 +1,41 @@
+"use client";
+
+import { motion } from "motion/react";
 
 interface SectionHeadingProps {
   backgroundText: string;
   children: React.ReactNode;
+  heading: string;
 }
+
+const revealTransition = {
+  duration: 0.8,
+  ease: [0.22, 1, 0.36, 1] as const,
+};
 
 export function SectionHeading({
   backgroundText,
+  heading,
   children,
 }: SectionHeadingProps) {
   return (
     <div className="relative w-full overflow-hidden">
       <div className="relative flex min-h-18 items-center justify-center md:min-h-45">
-        <h2
-          id="experience-heading"
+        <motion.h2
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={revealTransition}
+          id={`${heading}-heading`}
           aria-hidden="true"
           className="
             max-w-full
@@ -27,9 +50,25 @@ export function SectionHeading({
           "
         >
           {backgroundText}
-        </h2>
+        </motion.h2>
 
-        <span
+        <motion.span
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            ...revealTransition,
+            delay: 0.1,
+          }}
           className="
             absolute
             max-w-full
@@ -49,7 +88,7 @@ export function SectionHeading({
           "
         >
           {children}
-        </span>
+        </motion.span>
       </div>
     </div>
   );

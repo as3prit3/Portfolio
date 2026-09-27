@@ -60,7 +60,7 @@ export function ContactForm() {
     Boolean(state.errors?.[field as "name" | "email" | "message"]);
 
   return (
-    <form action={formAction} className="mt-8 w-full max-w-140">
+    <form action={formAction}>
       {/* Honeypot */}
       <input
         type="text"

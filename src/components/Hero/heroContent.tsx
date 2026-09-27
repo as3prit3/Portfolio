@@ -24,9 +24,9 @@ export function HeroContent() {
 							Software Engineer
 						</h1>
 						<p className="text-muted-foreground">
-							I'm a software engineer who builds clean, reliable web
+							I&apos;m a software engineer who builds clean, reliable web
 							applications from front to back. Currently focused on
-							React and Node, with an eye for code that's easy to read
+							React and Node, with an eye for code that&apos;s easy to read
 							and maintain
 						</p>
 						<button className="bg-primary text-primary-foreground rounded-full py-2 px-6 self-start">

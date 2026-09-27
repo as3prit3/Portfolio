@@ -6,6 +6,8 @@ import { SectionHeading } from "@/components/layout/section-heading";
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
 export function Experience() {
   const timelineRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +31,7 @@ export function Experience() {
       <Container>
         <div className="pt- pb-12 md:py-16">
           {/* Section heading */}
-          <SectionHeading backgroundText="Experience">
+          <SectionHeading backgroundText="Experience" heading="experience">
             /Experience
           </SectionHeading>
 
@@ -39,16 +41,32 @@ export function Experience() {
                 MOBILE / TABLET
                 ========================= */}
             <div className="flex flex-col gap-6 lg:hidden">
-              {experiences.map((experience) => (
-                <article
+              {experiences.map((experience, index) => (
+                <motion.article
                   key={experience.id}
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.2,
+                  }}
+                  transition={{
+                    duration: 0.9,
+                    delay: index * 0.3,
+                    ease: revealEase,
+                  }}
                   className="
                     rounded-2xl
                     border
                     border-white/10
                     bg-[#161618]
                     p-5
-
                     sm:p-6
                   "
                 >
@@ -123,7 +141,7 @@ export function Experience() {
                       <p key={index}>{paragraph}</p>
                     ))}
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
 
@@ -132,7 +150,7 @@ export function Experience() {
                 ========================= */}
             <div ref={timelineRef} className="relative hidden lg:block">
               {/* Center line */}
-              <div
+              <motion.div
                 aria-hidden="true"
                 className="
                   absolute
@@ -168,8 +186,25 @@ export function Experience() {
                   const isLeft = index % 2 === 0;
 
                   return (
-                    <article
+                    <motion.article
                       key={experience.id}
+                      initial={{
+                        opacity: 0,
+                        x: isLeft ? -40 : 40,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                        amount: 0.2,
+                      }}
+                      transition={{
+                        duration: 0.90,
+                        delay: index * 0.3 + 0.2,
+                        ease: revealEase,
+                      }}
                       className={`
                         relative
                         w-1/2
@@ -250,7 +285,7 @@ export function Experience() {
                           <p key={index}>{paragraph}</p>
                         ))}
                       </div>
-                    </article>
+                    </motion.article>
                   );
                 })}
               </div>

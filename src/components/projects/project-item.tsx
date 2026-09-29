@@ -59,7 +59,7 @@ export function ProjectItem({ project, animationDelay = 0, }: ProjectItemProps) 
             duration-300
             hover:bg-[#262626]
             focus-visible:outline-2
-            focus-visible:outline-offset-[-2px]
+            focus-visible:-outline-offset-2
             focus-visible:outline-white
             md:px-4
             md:py-6

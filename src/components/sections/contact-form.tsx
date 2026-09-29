@@ -41,7 +41,11 @@ export function ContactForm() {
    */
   useEffect(() => {
     if (state.status === "success") {
-      setValues(initialValues);
+      const resetTimer = window.setTimeout(() => {
+        setValues(initialValues);
+      }, 0);
+
+      return () => window.clearTimeout(resetTimer);
     }
   }, [state.status]);
 
